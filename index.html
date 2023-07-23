@@ -1,0 +1,127 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <!-- it is a class ehich contains the whole page or you can say the whole body -->
+    <div class="wrapper">
+         
+        <!-- it is the heading if the web page -->
+        <h1>Weather  App</h1>
+
+        <!-- it is a container whhich contains both the tabs  -->
+        <div class="tab-container">
+        
+            <!-- it is the first tab which shows the weather of your location  -->
+            <p class="tab" data-userWeather>Your Weather </p>
+
+            <!-- it is tab from where we can the weather of any city -->
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <!-- this div contains all the different UI pages like your weather page , 
+        search weather page , grant location page , the loading page. -->
+        <div class="weather-container">
+
+            <!-- it is container which has the grant location page -->
+          <div class="sub-container grant-location-container">
+
+            <img src="./images/location.png" width="80" height="80" loading="lazy">
+
+            <p>Grant Location Access</p>
+
+            <p>Allow Access to get Weather Information</p>
+
+            <button class="btn" data-grantAccess>Grant Access</button>
+          </div>  
+             
+          <!-- search weather form -->
+          <form class=" sub-container form-container" data-searchForm>
+
+            <input type="text" placeholder="Search for City..." data-searchInput>
+
+            <button class="btn" type="submit">
+                <img src="./images/search.png" width="20" height="20" loading="lazy" >
+            </button>
+          </form>
+
+          <!-- loading screem container -->
+
+          <div class="sub-container loading-container">
+            <img src="./images/loading.gif" width="150" height="150">
+            <p>Loading</p>
+          </div>
+
+          <!-- Show Weather UI  -->
+          <div class="sub-container user-info-container">
+
+            <div class="name">
+                <!-- this will show the city name you have searches -->
+                <p data-cityName></p>
+
+                <!-- this will show the country flag of the city you have searched for -->
+                <img data-countryIcon>
+            </div>
+
+            <!-- this describes how your wather is eg HAZE -->
+            <p data-weatherDesc></p>
+ 
+            <!-- it will show the above description in icon form -->
+            <img data-weatherIcon>
+
+            <!-- it will show the temperature of the city you have searched for dynamically -->
+            <p data-temp></p>
+
+            <!-- 3 cards parameters -->
+
+            <div class="parameter-container">
+
+                <!-- first card making -->
+                <div class="parameter">
+                    <img src="./images/wind.png">
+                    <p>Windspeed</p>
+                    <p data-windspeed></p>
+                </div>
+
+                <!-- second card making -->
+                <div class="parameter">
+                    <img src="./images/humidity.png" >
+                    <p>Humidity</p>
+                    <p data-humidity></p>
+                </div>
+
+                <!-- card three making -->
+                <div class="parameter">
+                    <img src="./images/cloud.png">
+                    <p>Clouds</p>
+                    <p data-cloudiness></p>
+                </div>
+            </div>
+
+
+
+          </div>
+
+          
+
+        </div>
+        <div class="err-container">
+          <img src="./images/not-found.png">
+          <p class="err-message">404 City not found</p>
+      </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
